@@ -19,11 +19,17 @@ After installation, type the following command into your terminal application.
   ```
 
   The page title will be copied to the clipboard.
-  `Example Domain`
+  - `Example Domain`
 
 - ```sh
   gtfu -m https://example.com/
   ```
 
   The page title will be copied to the clipboard in markdown format.
-  `[Example Domain](https://example.com/)`
+  - `[Example Domain](https://example.com/)`
+
+- ```sh
+  gtfu
+  ```
+
+  An interactive prompt will begin.
