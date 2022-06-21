@@ -1,5 +1,7 @@
 # gtfu
 
+[日本語はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
+
 Command line tool to Get pageTitle From Url.
 
 ## Installation
