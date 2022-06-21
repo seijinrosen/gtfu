@@ -5,6 +5,7 @@ description = "Command line tool to Get pageTitle From Url."
 authors = ["seijinrosen <86702775+seijinrosen@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/seijinrosen"
 repository = "https://github.com/seijinrosen/gtfu"
 
 [tool.poetry.dependencies]
