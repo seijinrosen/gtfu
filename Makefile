@@ -17,6 +17,12 @@ build:
 	poetry build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
+.PHONY: publish-test
+publish-test:
+	rm -r dist/
+	poetry publish -r testpypi --build
+	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
+
 .PHONY: clean
 clean:
 	rm -r .pytest_cache/
