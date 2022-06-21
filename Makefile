@@ -19,7 +19,7 @@ build:
 publish-test:
 	make test
 	rm -r dist/
-	poetry publish -r testpypi --build
+	poetry publish --repository testpypi --build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
 clean:
