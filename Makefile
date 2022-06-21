@@ -6,15 +6,18 @@ test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing
 
 update:
+	make test
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
 	make test
 
 build:
+	make test
 	poetry build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
 publish-test:
+	make test
 	rm -r dist/
 	poetry publish -r testpypi --build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
@@ -22,6 +25,7 @@ publish-test:
 clean:
 	rm -r .pytest_cache/
 	rm -r .venv/
+	rm -r dist/
 	rm .coverage
 
 init:
