@@ -3,7 +3,14 @@ from pytest_mock import MockerFixture
 from rich.console import Console
 
 from gtfu import cli
-from gtfu.cli import core, print_help_message, prompt, prompt_is_markdown, prompt_url
+from gtfu.cli import (
+    core,
+    print_help_message,
+    print_version,
+    prompt,
+    prompt_is_markdown,
+    prompt_url,
+)
 
 from ..conftest import get_namespace
 
@@ -31,6 +38,11 @@ def mock_core_main(mocker: MockerFixture):
 @fixture
 def mock_print_help_message(mocker: MockerFixture):
     yield mocker.patch(get_namespace(print_help_message), autospec=True)
+
+
+@fixture
+def mock_print_version(mocker: MockerFixture):
+    yield mocker.patch(get_namespace(print_version), autospec=True)
 
 
 @fixture

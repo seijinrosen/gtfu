@@ -46,6 +46,13 @@ def test_with_help_option(
     assert mock_core_main.call_count == 0
 
 
+def test_with_version_flag(mock_print_version: MagicMock):
+    main(["-V"])
+    main(["--version"])
+    main(["version"])
+    assert mock_print_version.call_count == 3
+
+
 def test_with_markdown_option(
     mock_print_help_message: MagicMock, mock_core_main: MagicMock
 ):

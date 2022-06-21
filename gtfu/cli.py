@@ -3,7 +3,7 @@ from itertools import filterfalse
 
 from readchar import key, readchar
 
-from . import core
+from . import __version__, core
 from .util import console, includes
 
 HELP_MESSAGE = """\
@@ -17,11 +17,16 @@ PROMPT_URL_MESSAGE = "Enter URL: "
 PROMPT_IS_MARKDOWN_MESSAGE = "マークダウン形式でコピーしますか？ (y/N): "
 
 HELP_FLAGS = {"-h", "--help", "help"}
+VERSION_FLAGS = {"-V", "--version", "version"}
 MARKDOWN_FLAGS = {"-m", "--markdown"}
 
 
 def print_help_message() -> None:
     console.print(HELP_MESSAGE)
+
+
+def print_version() -> None:
+    console.print(__version__)
 
 
 def prompt(is_markdown: bool) -> tuple[str, bool]:
@@ -66,6 +71,9 @@ def prompt_is_markdown() -> bool:
 def main(args: list[str]) -> None:
     if includes(args, HELP_FLAGS):
         print_help_message()
+        return
+    if includes(args, VERSION_FLAGS):
+        print_version()
         return
 
     user_input_url = next(filterfalse(lambda x: x.startswith("-"), args), "")
