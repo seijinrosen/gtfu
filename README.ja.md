@@ -1,8 +1,8 @@
 # gtfu
 
 [English ver.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
-URLからページタイトルを取得するスクリプトです。
-`gtfu` は Get Title From Url の略です。
+
+URLからページタイトルを取得するスクリプトです。`gtfu` は Get Title From Url の略です。
 
 ## インストール
 
@@ -35,5 +35,4 @@ pip install gtfu
   gtfu
   ```
 
-  対話形式のプロンプトを開始します。
-  取得対象のURLと、Markdown形式にするかどうかを聞かれます。
+  対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。
