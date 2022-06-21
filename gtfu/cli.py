@@ -9,7 +9,7 @@ from .util import console, includes
 HELP_MESSAGE = """\
 Get Title From URL
 
-ヘルプメッセージ\
+See https://github.com/seijinrosen/gtfu for usage.\
 """
 EXIT_MESSAGE = "\nBye."
 PROMPT_MESSAGE = "Ctrl+C か Ctrl+D で中断します"
