@@ -17,10 +17,14 @@ build:
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
 publish-test:
-	make test
 	rm -r dist/
-	poetry publish --repository testpypi --build
-	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
+	make build
+	poetry publish --repository testpypi
+
+publish-production:
+	rm -r dist/
+	make build
+	poetry publish
 
 clean:
 	rm -r .pytest_cache/
