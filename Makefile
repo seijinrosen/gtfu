@@ -1,35 +1,33 @@
 PACKAGE_NAME = gtfu
-VERSION = 0.1.0
+VERSION = 0.1.1
 PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 
-.PHONY: test
 test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing
 
-.PHONY: update
 update:
+	make test
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
 	make test
 
-.PHONY: build
 build:
+	make test
 	poetry build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
-.PHONY: publish-test
 publish-test:
+	make test
 	rm -r dist/
-	poetry publish -r testpypi --build
+	poetry publish --repository testpypi --build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 
-.PHONY: clean
 clean:
 	rm -r .pytest_cache/
 	rm -r .venv/
+	rm -r dist/
 	rm .coverage
 
-.PHONY: init
 init:
 	/usr/local/bin/python3 -m venv .venv/
 	poetry install

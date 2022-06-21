@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "gtfu"
-version = "0.1.0"
+version = "0.1.1"
 description = "Command line tool to Get pageTitle From Url."
-authors = ["seijinrosen <86702775+seijinrosen@users.noreply.github.com>"]
 license = "MIT"
+authors = ["seijinrosen <86702775+seijinrosen@users.noreply.github.com>"]
 readme = "README.md"
 homepage = "https://github.com/seijinrosen"
 repository = "https://github.com/seijinrosen/gtfu"
