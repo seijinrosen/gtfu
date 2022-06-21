@@ -1,2 +1,3 @@
 # gtfu
-command line tool to Get pageTitle From Url
+
+Command line tool to Get pageTitle From Url.
