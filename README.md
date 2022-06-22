@@ -21,22 +21,30 @@ pip install gtfu
 
 After installation, type the following command into your terminal application.
 
-- ```sh
-  gtfu https://example.com/
-  ```
+### Standard mode
 
-  The page title will be copied to the clipboard.
-  - `Example Domain`
+```sh
+gtfu https://example.com/
+```
 
-- ```sh
-  gtfu -m https://example.com/
-  ```
+The page title will be copied to the clipboard.
 
-  The page title will be copied to the clipboard in markdown format.
-  - `[Example Domain](https://example.com/)`
+- `Example Domain`
 
-- ```sh
-  gtfu
-  ```
+### Markdown mode
 
-  An interactive prompt will begin.
+```sh
+gtfu -m https://example.com/
+```
+
+The page title will be copied to the clipboard in markdown format.
+
+- `[Example Domain](https://example.com/)`
+
+### Prompt mode
+
+```sh
+gtfu
+```
+
+An interactive prompt will begin. You will be asked for the URL to be retrieved and whether you want it in Markdown format.

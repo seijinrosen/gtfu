@@ -22,22 +22,30 @@ pip install gtfu
 
 インストールに成功したら、以下のコマンドをターミナルアプリに入力してください。
 
-- ```sh
-  gtfu https://example.com/
-  ```
+### 通常モード
 
-  ページタイトルがクリップボードにコピーされます。
-  - `Example Domain`
+```sh
+gtfu https://example.com/
+```
 
-- ```sh
-  gtfu -m https://example.com/
-  ```
+ページタイトルがクリップボードにコピーされます。
 
-  ページタイトルとURLが、Markdown形式でクリップボードにコピーされます。
-  - `[Example Domain](https://example.com/)`
+- `Example Domain`
 
-- ```sh
-  gtfu
-  ```
+### Markdownモード
 
-  対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。
+```sh
+gtfu -m https://example.com/
+```
+
+ページタイトルとURLが、Markdown形式でクリップボードにコピーされます。
+
+- `[Example Domain](https://example.com/)`
+
+### 対話モード
+
+```sh
+gtfu
+```
+
+対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。
