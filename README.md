@@ -2,6 +2,9 @@
 
 [日本語はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
 
+[![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Command line tool to Get pageTitle From Url.
