@@ -1,7 +1,9 @@
 # gtfu
 
-[日本語はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
+[日本語(Japanese)はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)
+![PyPI](https://img.shields.io/pypi/v/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
