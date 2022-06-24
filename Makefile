@@ -6,13 +6,13 @@ test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing
 
 update:
-	make test
+	tox
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
-	make test
+	tox
 
 build:
-	make test
+	tox
 	poetry build
 	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
 

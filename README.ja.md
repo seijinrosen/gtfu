@@ -1,6 +1,13 @@
 # gtfu
 
-[English ver.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
+[English version is here.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)
+![PyPI](https://img.shields.io/pypi/v/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 URLからページタイトルを取得するスクリプトです。`gtfu` は Get Title From Url の略です。
 
@@ -17,22 +24,30 @@ pip install gtfu
 
 インストールに成功したら、以下のコマンドをターミナルアプリに入力してください。
 
-- ```sh
-  gtfu https://example.com/
-  ```
+### 通常モード
 
-  ページタイトルがクリップボードにコピーされます。
-  - `Example Domain`
+```sh
+gtfu https://example.com/
+```
 
-- ```sh
-  gtfu -m https://example.com/
-  ```
+ページタイトルがクリップボードにコピーされます。
 
-  ページタイトルとURLが、Markdown形式でクリップボードにコピーされます。
-  - `[Example Domain](https://example.com/)`
+- `Example Domain`
 
-- ```sh
-  gtfu
-  ```
+### Markdownモード
 
-  対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。
+```sh
+gtfu -m https://example.com/
+```
+
+ページタイトルとURLが、Markdown形式でクリップボードにコピーされます。
+
+- `[Example Domain](https://example.com/)`
+
+### 対話モード
+
+```sh
+gtfu
+```
+
+対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。

@@ -1,6 +1,13 @@
 # gtfu
 
-[日本語はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
+[日本語(Japanese)はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)
+![PyPI](https://img.shields.io/pypi/v/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
+[![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Command line tool to Get pageTitle From Url.
 
@@ -16,22 +23,30 @@ pip install gtfu
 
 After installation, type the following command into your terminal application.
 
-- ```sh
-  gtfu https://example.com/
-  ```
+### Standard mode
 
-  The page title will be copied to the clipboard.
-  - `Example Domain`
+```sh
+gtfu https://example.com/
+```
 
-- ```sh
-  gtfu -m https://example.com/
-  ```
+The page title will be copied to the clipboard.
 
-  The page title will be copied to the clipboard in markdown format.
-  - `[Example Domain](https://example.com/)`
+- `Example Domain`
 
-- ```sh
-  gtfu
-  ```
+### Markdown mode
 
-  An interactive prompt will begin.
+```sh
+gtfu -m https://example.com/
+```
+
+The page title will be copied to the clipboard in markdown format.
+
+- `[Example Domain](https://example.com/)`
+
+### Prompt mode
+
+```sh
+gtfu
+```
+
+An interactive prompt will begin. You will be asked for the URL to be retrieved and whether you want it in Markdown format.
