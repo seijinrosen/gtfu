@@ -36,7 +36,6 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get install xsel xclip
-          pip install gtk PyQt4
 
       - name: Test with pytest
         run: |
