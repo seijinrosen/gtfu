@@ -32,11 +32,18 @@ jobs:
           poetry install
 
       # https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error
-      - name: Install pyperclip packages on Linux
+      - name: Install packages for pyperclip on Linux
         if: runner.os == 'Linux'
         run: |
-          sudo apt-get install xsel xclip
+          sudo apt-get install xsel xvfb
 
-      - name: Test with pytest
+      # https://zenn.dev/denzow/articles/934cf44601628c
+      - name: Test with pytest on Linux
+        if: runner.os == 'Linux'
+        run: |
+          xvfb-run poetry run pytest --capture=no --cov=gtfu --cov-report=term-missing
+
+      - name: Test with pytest on macOS or Windows
+        if: runner.os != 'Linux'
         run: |
           poetry run pytest --capture=no --cov=gtfu --cov-report=term-missing
