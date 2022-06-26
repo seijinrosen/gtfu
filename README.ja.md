@@ -2,8 +2,8 @@
 
 [English version is here.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)
-![PyPI](https://img.shields.io/pypi/v/gtfu)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)](https://pypi.python.org/pypi/gtfu)
+[![PyPI](https://img.shields.io/pypi/v/gtfu)](https://pypi.python.org/pypi/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
