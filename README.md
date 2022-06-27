@@ -2,6 +2,7 @@
 
 [日本語(Japanese)はこちら](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md)
 
+[![Tests](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml/badge.svg)](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)](https://pypi.python.org/pypi/gtfu)
 [![PyPI](https://img.shields.io/pypi/v/gtfu)](https://pypi.python.org/pypi/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
