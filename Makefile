@@ -1,4 +1,3 @@
-PACKAGE_NAME = gtfu
 VERSION = 0.1.1
 PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 
@@ -28,6 +27,7 @@ publish-production:
 
 clean:
 	rm -r .pytest_cache/
+	rm -r .tox/
 	rm -r .venv/
 	rm -r dist/
 	rm .coverage
