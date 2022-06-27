@@ -3,6 +3,9 @@
 
 name: Tests
 
+env:
+  PACKAGE_NAME: gtfu
+
 on:
   push:
     branches: ["main"]
@@ -41,9 +44,9 @@ jobs:
       - name: Test with pytest on Linux
         if: runner.os == 'Linux'
         run: |
-          xvfb-run poetry run pytest --capture=no --cov=gtfu --cov-report=term-missing
+          xvfb-run poetry run pytest --capture=no --cov=$PACKAGE_NAME --cov-report=term-missing
 
       - name: Test with pytest on macOS or Windows
         if: runner.os != 'Linux'
         run: |
-          poetry run pytest --capture=no --cov=gtfu --cov-report=term-missing
+          poetry run pytest --capture=no --cov=$PACKAGE_NAME --cov-report=term-missing
