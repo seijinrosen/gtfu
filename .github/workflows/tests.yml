@@ -44,12 +44,12 @@ jobs:
       - name: Test with pytest on Linux
         if: runner.os == 'Linux'
         run: |
-          xvfb-run poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing
+          xvfb-run poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing --cov-report=xml
 
       - name: Test with pytest on macOS or Windows
         if: runner.os != 'Linux'
         run: |
-          poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing
+          poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing --cov-report=xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
