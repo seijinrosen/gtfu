@@ -2,7 +2,7 @@ VERSION = 0.1.1
 PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 
 test:
-	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing
+	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing --cov-report=html
 
 update:
 	tox
