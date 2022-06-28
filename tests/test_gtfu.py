@@ -3,3 +3,7 @@ from gtfu import __version__
 
 def test_version():
     assert __version__ == "0.1.1"
+
+
+def test_fail():
+    assert False
