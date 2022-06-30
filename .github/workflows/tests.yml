@@ -31,35 +31,44 @@ jobs:
 
       - name: Install dependencies
         run: |
-          ls -Ahl
           python --version
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install poetry
           poetry install
-          ls -Ahl
+
+      - name: List files on Linux or macOS
+        if: runner.os != 'Windows'
+        run: |
+          ls -AGhl
+      - name: List files on Windows
+        if: runner.os == 'Windows'
+        run: |
+          Get-ChildItem -Force
 
       # https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error
       - name: Install packages for pyperclip on Linux
         if: runner.os == 'Linux'
         run: |
-          ls -Ahl
           sudo apt-get install xsel xvfb
-          ls -Ahl
 
       # https://zenn.dev/denzow/articles/934cf44601628c
       - name: Test with pytest on Linux
         if: runner.os == 'Linux'
         run: |
-          ls -Ahl
           xvfb-run poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing --cov-report=xml
-          ls -Ahl
-
       - name: Test with pytest on macOS or Windows
         if: runner.os != 'Linux'
         run: |
-          ls -Ahl
           poetry run pytest --cov=${{ env.PACKAGE_NAME }} --cov-report=term-missing --cov-report=xml
-          ls -Ahl
+
+      - name: List files on Linux or macOS
+        if: runner.os != 'Windows'
+        run: |
+          ls -AGhl
+      - name: List files on Windows
+        if: runner.os == 'Windows'
+        run: |
+          Get-ChildItem -Force
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
