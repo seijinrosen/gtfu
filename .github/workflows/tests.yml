@@ -55,7 +55,7 @@ jobs:
       - name: Test with pytest on Linux
         if: runner.os == 'Linux'
         run: |
-          xvfb-run poetry run pytest --cov=$PACKAGE_NAME --cov-report=term-missing --cov-report=xml
+          xvfb-run poetry run pytest --cov=${{ env.PACKAGE_NAME }} --cov-report=term-missing --cov-report=xml
       - name: Test with pytest on macOS or Windows
         if: runner.os != 'Linux'
         run: |
