@@ -2,9 +2,10 @@
 
 [English version is here.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
 
-[![Tests](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml/badge.svg)](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)](https://pypi.python.org/pypi/gtfu)
 [![PyPI](https://img.shields.io/pypi/v/gtfu)](https://pypi.python.org/pypi/gtfu)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)](https://pypi.python.org/pypi/gtfu)
+[![Tests](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml/badge.svg)](https://github.com/seijinrosen/gtfu/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/seijinrosen/gtfu/branch/main/graph/badge.svg)](https://codecov.io/gh/seijinrosen/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/month)](https://pepy.tech/project/gtfu)
 [![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
