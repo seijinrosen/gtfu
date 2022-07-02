@@ -8,6 +8,9 @@
 
 name: Upload Python Package
 
+env:
+  PACKAGE_WITH_VERSION: gtfu-0.1.1
+
 on:
   release:
     types: [published]
@@ -39,6 +42,7 @@ jobs:
 
       - run: |
           ls -AGhl
+          ls -AGhl ./dist
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
@@ -46,6 +50,11 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
 
-      - name: List files
+      - name: List ./dist files
         run: |
+          ls -AGhl
+          ls -AGhl ./dist
+          tar zxvf dist/${{ PACKAGE_WITH_VERSION }}.tar.gz -C ./dist
+          ls -AGhl ./dist
+          ls -AGhl ./dist/${{ PACKAGE_WITH_VERSION }}
           ls -AGhl
