@@ -1,6 +1,7 @@
 # gtfu
 
-[English version is here.](https://github.com/seijinrosen/gtfu/blob/main/README.md)
+[日本語](https://github.com/seijinrosen/gtfu/blob/main/README.ja.md) |
+[English](https://github.com/seijinrosen/gtfu/blob/main/README.md)
 
 [![PyPI](https://img.shields.io/pypi/v/gtfu)](https://pypi.python.org/pypi/gtfu)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gtfu)](https://pypi.python.org/pypi/gtfu)
