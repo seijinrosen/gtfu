@@ -54,7 +54,7 @@ jobs:
         run: |
           ls -AGhl
           ls -AGhl ./dist
-          tar zxvf dist/${{ PACKAGE_WITH_VERSION }}.tar.gz -C ./dist
+          tar zxvf dist/${{ env.PACKAGE_WITH_VERSION }}.tar.gz -C ./dist
           ls -AGhl ./dist
-          ls -AGhl ./dist/${{ PACKAGE_WITH_VERSION }}
+          ls -AGhl ./dist/${{ env.PACKAGE_WITH_VERSION }}
           ls -AGhl
