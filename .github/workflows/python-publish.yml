@@ -70,3 +70,5 @@ jobs:
           ls -AGhl
           python -m pip list
           pip list
+
+      - run: ls ${{ github.workspace }}
