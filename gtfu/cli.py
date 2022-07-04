@@ -14,9 +14,9 @@ Get Title From URL
 See https://github.com/seijinrosen/gtfu for usage.\
 """
 EXIT_MESSAGE = "\nBye."
-PROMPT_MESSAGE = "Ctrl+C か Ctrl+D で中断します"
+PROMPT_MESSAGE = "Ctrl+C or Ctrl+D to abort."
 PROMPT_URL_MESSAGE = "Enter URL: "
-PROMPT_IS_MARKDOWN_MESSAGE = "マークダウン形式でコピーしますか？ (y/N): "
+PROMPT_IS_MARKDOWN_MESSAGE = "In markdown? (y/N): "
 
 HELP_FLAGS = {"-h", "--help", "help"}
 VERSION_FLAGS = {"-V", "--version", "version"}
