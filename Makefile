@@ -13,7 +13,8 @@ update:
 build:
 	tox
 	poetry build
-	tar zxvf dist/$(PACKAGE_WITH_VERSION).tar.gz -C ./dist
+	tar zxvf dist/${PACKAGE_WITH_VERSION}.tar.gz -C ./dist
+	unzip dist/${PACKAGE_WITH_VERSION}-py3-none-any.whl -d ./dist
 
 publish-test:
 	rm -r dist/
@@ -30,9 +31,10 @@ clean:
 	rm -r .tox/
 	rm -r .venv/
 	rm -r dist/
+	rm -r htmlcov/
 	rm .coverage
 
 init:
-	/usr/local/bin/python3 -m venv .venv/
+	/usr/local/bin/python3.8 -m venv .venv/
 	poetry install
 	direnv allow
