@@ -35,9 +35,8 @@ def normalize_url(user_input_url: str) -> str:
 
 def main(user_input_url: str, is_markdown: bool) -> None:
     url = normalize_url(user_input_url)
-    with console.status(f"{url} にアクセスしています..."):
-        to_copied = get_title_from_url(url, is_markdown)
-    console.print(f"{url} のデータを正常に取得しました:thumbs_up:")
+    console.print("[bold]Requesting...:", url)
+    to_copied = get_title_from_url(url, is_markdown)
+    console.print("Success!:thumbs_up:", style="bold green")
     pyperclip.copy(to_copied)  # type: ignore
-    console.print("以下の文字列がクリップボードにコピーされました")
-    console.print(to_copied, style="bold")
+    console.print("[bold]Copied to the clipboard:", to_copied)
