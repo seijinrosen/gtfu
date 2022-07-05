@@ -5,13 +5,11 @@ test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing --cov-report=html
 
 update:
-	tox
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
 	tox
 
 build:
-	tox
 	poetry build
 	tar zxvf dist/${PACKAGE_WITH_VERSION}.tar.gz -C ./dist
 	unzip dist/${PACKAGE_WITH_VERSION}-py3-none-any.whl -d ./dist
