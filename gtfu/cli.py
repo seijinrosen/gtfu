@@ -9,9 +9,23 @@ from . import __version__, core
 from .util import console, includes
 
 HELP_MESSAGE = """\
-Get Title From URL
+Command line tool to Get pageTitle From Url.
 
-See https://github.com/seijinrosen/gtfu for usage.\
+[bold]Usage:[/bold]
+  gtfu https://example.com/
+  gtfu https://example.com/ -m
+  gtfu
+  gtfu -h
+  gtfu -V
+
+[bold]Options:[/bold]
+  [blue]-m, --markdown[/blue]  The page title will be copied to the clipboard in markdown format.
+
+[bold]Global options:[/bold]
+  [blue]-h, --help[/blue]      Show this help message and exit.
+  [blue]-V, --version[/blue]   Show program's version number and exit.
+
+See https://github.com/seijinrosen/gtfu for more information.\
 """
 EXIT_MESSAGE = "\nBye."
 PROMPT_MESSAGE = "Ctrl+C or Ctrl+D to abort."
