@@ -60,3 +60,12 @@ jobs:
 
       - run: pwd
       - run: ls ${{ github.workspace }}
+
+      - name: List files on Linux or macOS
+        if: runner.os != 'Windows'
+        run: |
+          ls -AGhl
+      - name: List files on Windows
+        if: runner.os == 'Windows'
+        run: |
+          Get-ChildItem -Force
