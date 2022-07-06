@@ -65,8 +65,10 @@ jobs:
           ls -AGhl
           ls -AGhl ./dist
           tar zxvf dist/${{ env.PACKAGE_WITH_VERSION }}.tar.gz -C ./dist
+          unzip dist/${PACKAGE_WITH_VERSION}-py3-none-any.whl -d ./dist
           ls -AGhl ./dist
           ls -AGhl ./dist/${{ env.PACKAGE_WITH_VERSION }}
+          ls -AGhl ./dist/${{ env.PACKAGE_WITH_VERSION }}.dist-info
           ls -AGhl
           python -m pip list
           pip list
