@@ -1,4 +1,4 @@
-VERSION = 1.0.0
+VERSION = 1.1.0
 PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 
 test:
@@ -33,6 +33,6 @@ clean:
 	rm .coverage
 
 init:
-	/usr/local/bin/python3.8 -m venv .venv/
+	python3.7 -m venv .venv/
 	poetry install
 	direnv allow

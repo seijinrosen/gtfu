@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gtfu"
-version = "1.0.0"
+version = "1.1.0"
 description = "Command line tool to Get pageTitle From Url."
 license = "MIT"
 authors = ["seijinrosen <86702775+seijinrosen@users.noreply.github.com>"]
@@ -10,7 +10,7 @@ repository = "https://github.com/seijinrosen/gtfu"
 documentation = "https://github.com/seijinrosen/gtfu"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 
 beautifulsoup4 = "^4.10.0"
 lxml = "^4.8.0"

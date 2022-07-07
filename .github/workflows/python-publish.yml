@@ -9,7 +9,7 @@
 name: Upload Python Package
 
 env:
-  PACKAGE_WITH_VERSION: gtfu-1.0.0
+  PACKAGE_WITH_VERSION: gtfu-1.1.0
 
 on:
   release:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip setuptools
           pip install build
 
       - name: ls and pip list
