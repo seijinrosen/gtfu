@@ -33,6 +33,6 @@ clean:
 	rm .coverage
 
 init:
-	python3.8 -m venv .venv/
+	python3.7 -m venv .venv/
 	poetry install
 	direnv allow
