@@ -4,6 +4,9 @@ PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing --cov-report=html
 
+switch:
+	git switch --create develop
+
 update:
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
