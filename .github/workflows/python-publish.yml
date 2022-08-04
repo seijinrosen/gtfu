@@ -9,7 +9,7 @@
 name: Upload Python Package
 
 env:
-  PACKAGE_WITH_VERSION: gtfu-1.1.0
+  PACKAGE_WITH_VERSION: gtfu-1.2.0
 
 on:
   release:
