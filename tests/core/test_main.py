@@ -3,18 +3,51 @@ from pytest import CaptureFixture, mark
 
 from gtfu.core import main
 
-from ..conftest import Example
-
 
 @mark.parametrize(
-    ("user_input_url", "is_markdown", "normalized_url", "clipboard"),
+    (
+        "user_input_url",
+        "is_markdown",
+        "normalized_url",
+        "clipboard",
+    ),
     [
-        (Example.URL_HTTPS, False, Example.URL_HTTPS, Example.TITLE),
-        (Example.URL_HTTPS, True, Example.URL_HTTPS, Example.MARKDOWN_HTTPS),
-        (Example.URL_HTTP, False, Example.URL_HTTP, Example.TITLE),
-        (Example.URL_HTTP, True, Example.URL_HTTP, Example.MARKDOWN_HTTP),
-        (Example.URL_WITHOUT_SCHEME, False, Example.URL_HTTPS, Example.TITLE),
-        (Example.URL_WITHOUT_SCHEME, True, Example.URL_HTTPS, Example.MARKDOWN_HTTPS),
+        (
+            "https://example_url",
+            False,
+            "https://example_url",
+            "Example Title",
+        ),
+        (
+            "https://example_url",
+            True,
+            "https://example_url",
+            "[Example Title](https://example_url)",
+        ),
+        (
+            "http://example_url",
+            False,
+            "http://example_url",
+            "Example Title",
+        ),
+        (
+            "http://example_url",
+            True,
+            "http://example_url",
+            "[Example Title](http://example_url)",
+        ),
+        (
+            "example_url",
+            False,
+            "https://example_url",
+            "Example Title",
+        ),
+        (
+            "example_url",
+            True,
+            "https://example_url",
+            "[Example Title](https://example_url)",
+        ),
     ],
 )
 def test(
@@ -28,4 +61,6 @@ def test(
     out, err = capsys.readouterr()
     assert err == ""
     assert normalized_url in out
+    assert "Success" in out
+    assert clipboard in out
     assert clipboard == pyperclip.paste()
