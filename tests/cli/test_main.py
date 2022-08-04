@@ -7,14 +7,12 @@ from pytest import mark
 
 from gtfu.cli import HELP_FLAGS, MARKDOWN_FLAGS, main
 
-from ..conftest import Example
-
 
 @mark.parametrize(
     ("prompt_return_value"),
     [
-        (Example.URL_HTTPS, True),
-        (Example.URL_HTTPS, False),
+        ("https://example_url", True),
+        ("https://example_url", False),
     ],
 )
 def test_with_no_arguments(
@@ -36,7 +34,7 @@ def test_with_help_option(
     mock_core_main: MagicMock,
 ):
     cnt = 0
-    other_options = [Example.URL_HTTPS, *MARKDOWN_FLAGS]
+    other_options = ["https://example_url", *MARKDOWN_FLAGS]
     for help_option in HELP_FLAGS:
         for i in range(len(other_options) + 1):
             for comb in combinations(other_options, i):
@@ -58,9 +56,9 @@ def test_with_version_flag(mock_print_version: MagicMock):
 def test_with_markdown_option(
     mock_print_help_message: MagicMock, mock_core_main: MagicMock
 ):
-    args = [Example.URL_WITHOUT_SCHEME, "-m"]
+    args = ["example_url", "-m"]
     assert main(args) is None
-    mock_core_main.assert_called_once_with(Example.URL_WITHOUT_SCHEME, True)
+    mock_core_main.assert_called_once_with("example_url", True)
     assert mock_print_help_message.call_count == 0
 
 
@@ -69,10 +67,10 @@ def test_with_one_argument(
     mock_core_main: MagicMock,
     mock_prompt_url: MagicMock,
 ):
-    assert main([Example.URL_WITHOUT_SCHEME]) is None
+    assert main(["example_url"]) is None
     assert not mock_prompt_url.called
     mock_print_help_message.assert_not_called()
-    mock_core_main.assert_called_once_with(Example.URL_WITHOUT_SCHEME, False)
+    mock_core_main.assert_called_once_with("example_url", False)
 
 
 def test_with_invalid_but_ok_argument(
@@ -80,8 +78,8 @@ def test_with_invalid_but_ok_argument(
     mock_print_help_message: MagicMock,
     mock_core_main: MagicMock,
 ):
-    args = [Example.URL_WITHOUT_SCHEME, "-m", "--markdown"]
+    args = ["example_url", "-m", "--markdown"]
     assert main(args) is None
     assert mock_print_help_message.call_count == 0
     assert mock_prompt_url.call_count == 0
-    mock_core_main.assert_called_once_with(Example.URL_WITHOUT_SCHEME, True)
+    mock_core_main.assert_called_once_with("example_url", True)

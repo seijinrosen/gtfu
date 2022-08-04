@@ -6,8 +6,6 @@ from pytest import CaptureFixture, mark, raises
 
 from gtfu.cli import PROMPT_MESSAGE, prompt
 
-from ..conftest import Example
-
 
 @mark.parametrize(
     (
@@ -17,10 +15,10 @@ from ..conftest import Example
         "expected",
     ),
     [
-        (True, Example.URL_HTTPS, None, (Example.URL_HTTPS, True)),
-        (True, Example.URL_HTTPS, None, (Example.URL_HTTPS, True)),
-        (False, Example.URL_HTTPS, True, (Example.URL_HTTPS, True)),
-        (False, Example.URL_HTTPS, False, (Example.URL_HTTPS, False)),
+        (True, "https://example_url", None, ("https://example_url", True)),
+        (True, "https://example_url", None, ("https://example_url", True)),
+        (False, "https://example_url", True, ("https://example_url", True)),
+        (False, "https://example_url", False, ("https://example_url", False)),
     ],
 )
 def test(
