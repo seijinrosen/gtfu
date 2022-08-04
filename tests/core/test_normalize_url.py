@@ -2,18 +2,17 @@ from pytest import mark
 
 from gtfu.core import normalize_url
 
-from ..conftest import Example
+URL_BODY = "example_url"
+HTTP = "http://"
+HTTPS = "https://"
 
 
 @mark.parametrize(
     ("user_input_url", "expected"),
     [
-        ("example_url", Example.URL_HTTPS),
-        (Example.URL_WITHOUT_SCHEME, Example.URL_HTTPS),
-        ("http://example_url", Example.URL_HTTP),
-        (Example.URL_HTTP, Example.URL_HTTP),
-        ("https://example_url", Example.URL_HTTPS),
-        (Example.URL_HTTPS, Example.URL_HTTPS),
+        (URL_BODY, HTTPS + URL_BODY),
+        (HTTP + URL_BODY, HTTP + URL_BODY),
+        (HTTPS + URL_BODY, HTTPS + URL_BODY),
     ],
 )
 def test(user_input_url: str, expected: str):
