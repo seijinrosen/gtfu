@@ -24,13 +24,9 @@ def get_title_from_url(url: str, markdown: bool = False) -> str:
 
 
 def normalize_url(user_input_url: str) -> str:
-    url_parts: list[str] = []
-    if not user_input_url.startswith(("https://", "http://")):
-        url_parts.append("https://")
-    url_parts.append(user_input_url)
-    if not user_input_url.endswith("/"):
-        url_parts.append("/")
-    return "".join(url_parts)
+    if user_input_url.startswith(("https://", "http://")):
+        return user_input_url
+    return "https://" + user_input_url
 
 
 def main(user_input_url: str, is_markdown: bool) -> None:
