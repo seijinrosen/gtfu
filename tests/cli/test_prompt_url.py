@@ -4,14 +4,12 @@ from pytest import CaptureFixture, mark
 
 from gtfu.cli import PROMPT_URL_MESSAGE, prompt_url
 
-from ..conftest import Example
-
 
 @mark.parametrize(
     ("console_input_return_value", "expected"),
     [
-        (Example.URL_HTTPS, Example.URL_HTTPS),
-        (f" 　\n\f\t\v\r{Example.URL_HTTPS} 　\n\f\t\v\r", Example.URL_HTTPS),
+        ("https://example_url", "https://example_url"),
+        (f" 　\n\f\t\v\r{'https://example_url'} 　\n\f\t\v\r", "https://example_url"),
     ],
 )
 def test(

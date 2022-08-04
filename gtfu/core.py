@@ -35,4 +35,5 @@ def main(user_input_url: str, is_markdown: bool) -> None:
     to_copied = get_title_from_url(url, is_markdown)
     console.print("Success!:thumbs_up:", style="bold green")
     pyperclip.copy(to_copied)  # type: ignore
-    console.print("[bold]Copied to the clipboard:", to_copied)
+    console.print("Copied to the clipboard:", style="bold")
+    print(to_copied)

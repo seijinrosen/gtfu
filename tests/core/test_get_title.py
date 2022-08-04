@@ -2,14 +2,14 @@ from pytest import mark
 
 from gtfu.core import get_title
 
-from ..conftest import Example
+from ..conftest import EXAMPLE_HTML_BYTES
 
 
 @mark.parametrize(
     ("response_content", "expected"),
     [
-        (Example.HTML_BYTES, Example.TITLE),
-        ("", ""),
+        (EXAMPLE_HTML_BYTES, "Example Title"),
+        (b"", ""),
     ],
 )
 def test(response_content: bytes, expected: str):

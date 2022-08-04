@@ -8,17 +8,8 @@ from requests.models import Response
 
 from gtfu.__main__ import cli
 
-
-class Example:
-    URL_WITHOUT_SCHEME = "example_url/"
-    URL_HTTP = "http://" + URL_WITHOUT_SCHEME
-    URL_HTTPS = "https://" + URL_WITHOUT_SCHEME
-    HTML_PATH = Path("tests/example.html")
-    HTML_TEXT = HTML_PATH.read_text()
-    HTML_BYTES = HTML_PATH.read_bytes()
-    TITLE = "Example Title"
-    MARKDOWN_HTTP = f"[{TITLE}]({URL_HTTP})"
-    MARKDOWN_HTTPS = f"[{TITLE}]({URL_HTTPS})"
+EXAMPLE_HTML_PATH = Path("tests/example.html")
+EXAMPLE_HTML_BYTES = EXAMPLE_HTML_PATH.read_bytes()
 
 
 def get_namespace(func: Callable[..., Any]) -> str:
@@ -28,8 +19,7 @@ def get_namespace(func: Callable[..., Any]) -> str:
 @fixture(autouse=True)
 def mock_requests_get(mocker: MockerFixture):
     mock_response = create_autospec(Response)
-    mock_response.text = Example.HTML_TEXT
-    mock_response.content = Example.HTML_BYTES
+    mock_response.content = EXAMPLE_HTML_BYTES
     mock_requests_get = mocker.patch("requests.get", autospec=True)
     mock_requests_get.return_value = mock_response
 
