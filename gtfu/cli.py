@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import platform
 import sys
 from itertools import filterfalse
+from pathlib import Path
 
 from readchar import key, readchar
 
@@ -42,7 +44,9 @@ def print_help_message() -> None:
 
 
 def print_version() -> None:
-    console.print(__version__)
+    console.print("gtfu:  ", __version__)
+    console.print("Python:", platform.python_version())
+    console.print("from:  ", Path(__file__).parent)
 
 
 def prompt(is_markdown: bool) -> tuple[str, bool]:
