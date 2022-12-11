@@ -4,7 +4,7 @@ import gtfu
 
 
 def test_version():
-    assert gtfu.__version__ == "1.3.0"
+    assert gtfu.__version__ == "1.3.1"
 
 
 @mark.parametrize(
