@@ -7,6 +7,12 @@ test:
 switch:
 	git switch --create develop
 
+after-develop-merged:
+	git switch main
+	git pull --prune
+	git branch --delete develop
+	make switch
+
 update:
 	poetry run pip install --upgrade pip setuptools wheel
 	poetry update
