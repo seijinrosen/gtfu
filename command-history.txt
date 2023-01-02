@@ -1,3 +1,5 @@
 poetry lock --no-update
 poetry update gitpython
 poetry add --group=dev pre-commit
+pre-commit sample-config > .pre-commit-config.yaml
+pre-commit install
