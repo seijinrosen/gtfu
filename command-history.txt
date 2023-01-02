@@ -1,2 +1,3 @@
 poetry lock --no-update
 poetry update gitpython
+poetry add --group=dev pre-commit
