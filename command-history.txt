@@ -1,0 +1,2 @@
+poetry lock --no-update
+poetry update gitpython
