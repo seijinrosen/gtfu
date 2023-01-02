@@ -6,6 +6,7 @@
     "capsys",
     "codecov",
     "codeql",
+    "gitpython",
     "gtfu",
     "lxml",
     "pypa",
