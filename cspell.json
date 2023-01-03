@@ -16,6 +16,7 @@
     "readchar",
     "seijinrosen",
     "setuptools",
+    "venv",
     "xsel",
     "xvfb",
     "zxvf"
