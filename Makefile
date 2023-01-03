@@ -4,6 +4,9 @@ PACKAGE_WITH_VERSION = ${PACKAGE_NAME}-${VERSION}
 test:
 	poetry run pytest --capture=no --cov=${PACKAGE_NAME} --cov-report=term-missing --cov-report=html
 
+lint:
+	pre-commit run --all-files
+
 switch:
 	git switch --create develop
 
@@ -45,3 +48,4 @@ init:
 	python3.7 -m venv .venv/
 	poetry install
 	direnv allow
+	pre-commit install
