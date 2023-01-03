@@ -13,7 +13,7 @@
 [![Downloads](https://pepy.tech/badge/gtfu/week)](https://pepy.tech/project/gtfu)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-URLからページタイトルを取得するスクリプトです。`gtfu` は Get Title From Url の略です。
+URL からページタイトルを取得するスクリプトです。`gtfu` は Get Title From Url の略です。
 
 ## インストール
 
@@ -38,13 +38,13 @@ gtfu https://example.com/
 
 - `Example Domain`
 
-### Markdownモード
+### Markdown モード
 
 ```sh
 gtfu -m https://example.com/
 ```
 
-ページタイトルとURLが、Markdown形式でクリップボードにコピーされます。
+ページタイトルと URL が、Markdown 形式でクリップボードにコピーされます。
 
 - `[Example Domain](https://example.com/)`
 
@@ -54,4 +54,4 @@ gtfu -m https://example.com/
 gtfu
 ```
 
-対話形式のプロンプトを開始します。取得対象のURLと、Markdown形式にするかどうかを聞かれます。
+対話形式のプロンプトを開始します。取得対象の URL と、Markdown 形式にするかどうかを聞かれます。
