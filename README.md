@@ -17,7 +17,7 @@ Command line tool to Get pageTitle From Url.
 
 ## Installation
 
-It supports Python 3.7+.
+It supports Python 3.9+.
 
 ```sh
 pip install gtfu
