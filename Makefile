@@ -45,7 +45,7 @@ clean:
 	rm .coverage
 
 init:
-	python3.7 -m venv .venv/
+	python3.9 -m venv .venv/
 	poetry install
 	direnv allow
 	pre-commit install
